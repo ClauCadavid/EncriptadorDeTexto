@@ -1,4 +1,4 @@
-const textArea = document.querySelector (".text_area");
+const textArea = document.querySelector (".text-area");
 const mensaje = document.querySelector(".mensaje");
 
 //La letra "e" es convertida para "enter"
@@ -13,7 +13,7 @@ function btnEncriptar(){
 }
 
 function encriptar(stringEncriptada){
-    let matriz_code = [("e","enter"), ("i","imes"), ("a","ai"), ("o","ober"), ("u","ufat")]
+    let matriz_code = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]]
     stringEncriptada = stringEncriptada.tolowerCase()//convierte los textos en minuscula
 
     for (let i = 0; i < matriz_code.length; i ++){
