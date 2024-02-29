@@ -13,16 +13,15 @@ function btnEncriptar(){
 }
 
 function encriptar(stringEncriptada){
-    let matriz_code = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]]
+    let matrizCode = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]]
     stringEncriptada = stringEncriptada.tolowerCase()//convierte los textos en minuscula
 
-    for (let i = 0; i < matriz_code.length; i ++){
-        if(stringEncriptada.includes(matriz_code[i][0])){
-            stringEncriptada = stringEncriptada.replaceAll(matriz_code[i][0], matriz_code[i][1])
+    for (let i = 0; i < matrizCode.length; i++){
+        if(stringEncriptada.includes(matrizCode[i][0])){
+            stringEncriptada = stringEncriptada.replaceAll(matrizCode[i][0], matrizCode[i][1])
         } 
     }
-    // para hacer el recorrido de la matriz se utiliza el bucle for
-    //para verificar el array y las letras
-    //esto es para reemplazar todas las letras por la nueva posicion
     return stringEncriptada
-}
+}  // para hacer el recorrido de la matriz se utiliza el bucle for
+//para verificar el array y las letras
+//esto es para reemplazar todas las letras por la nueva posicion
