@@ -8,13 +8,16 @@ const mensaje = document.querySelector(".mensaje");
 //La letra "u" es convertida para "ufat"
 
 function btnEncriptar(){
-    const textoEncriptado = encriptar(textArea.value)
-    mensaje.value = textoEncriptado
+    const textoEncriptado = encriptar(textArea.value);
+    mensaje.value = textoEncriptado;
+    textArea.value = "";
+    mensaje.style.background = "none";
+    console.log(textoEncriptado)
 }
 
 function encriptar(stringEncriptada){
     let matrizCode = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]]
-    stringEncriptada = stringEncriptada.tolowerCase()//convierte los textos en minuscula
+    stringEncriptada = stringEncriptada.toLowerCase()//convierte los textos en minuscula
 
     for (let i = 0; i < matrizCode.length; i++){
         if(stringEncriptada.includes(matrizCode[i][0])){
@@ -22,6 +25,31 @@ function encriptar(stringEncriptada){
         } 
     }
     return stringEncriptada
-}  // para hacer el recorrido de la matriz se utiliza el bucle for
+}  
+// para hacer el recorrido de la matriz se utiliza el bucle for
 //para verificar el array y las letras
 //esto es para reemplazar todas las letras por la nueva posicion
+
+function btnDesencriptar(){
+    const textoDesencriptado = desencriptar(textArea.value)
+    mensaje.value = textoDesencriptado
+    textArea = "";
+}
+
+function desencriptar(stringDesencriptada){
+    let matrizCode = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]]
+    stringDesencriptada = stringDesencriptada.toLowerCase()//convierte los textos en minuscula
+
+    for (let i = 0; i < matrizCode.length; i++){
+        if(stringDesencriptada.includes(matrizCode[i][0])){
+            stringDesencriptada = stringDesencriptada.replaceAll(matrizCode[i][1], matrizCode[i][0])
+        } 
+    }
+    return stringDesencriptada
+}
+
+function copiar(){
+    mensaje.select();
+    navigator.clipboard.writeText(mensaje.value);
+    mensaje.value = "";
+}
