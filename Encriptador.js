@@ -16,7 +16,7 @@ function btnEncriptar(){
 }
 
 function encriptar(stringEncriptada){
-    let matrizCode = [["e","enter"], ["i","imes"], ["a","ai"], ["o","ober"], ["u","ufat"]]
+    let matrizCode = [["a","ai"], ["e","enter"], ["i","imes"], ["o","ober"], ["u","ufat"]]
     stringEncriptada = stringEncriptada.toLowerCase()//convierte los textos en minuscula
 
     for (let i = 0; i < matrizCode.length; i++){
