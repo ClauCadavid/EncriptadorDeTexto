@@ -1,40 +1,38 @@
-body{
-    width: 1440px;
-    height: 1024px;
-    top: 622px;
-    left: -2277px;
-    background: linear-gradient(lightblue, #B57EDC);
-}
-
 *{
     font-family: Inter;
-    font-size: 32px;
+    font-size: 1.2rem;
     font-weight: 400;
-    line-height: 150%;
-    overflow-y: hidden;
+    line-height: 1.5;
     text-align: left;
     border: none;
 }
 
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(lightblue, #B57EDC);
+}
+
 .logo{
-    padding-top: 40px;
+    padding-top: 5%;
     margin-left: 40px;
-    gap: 40px;
-    width: 120px;
-    height: 48px;
+    width: 10vw;
+    height: 7vh;
 }
 
 main{
    display: flex;
-   margin-bottom: 10px;
+   margin-bottom: 1em;
    margin-left: 180px;
 }
 
 .text-area{
-    height: 530px;
-    border: none;
+    width: 35vw;
+    height: 55vh;
     color: #0A3871;
-    margin-top: 90px;
+    margin-top: 1.5em;
     text-transform: lowercase;/*para transformar todo el texto a minuscula*/
     border-radius: 32px;
 }
@@ -46,36 +44,21 @@ main{
 
 .mensaje{
     background: white;
-    background-image: url("imagenes/Muñeco.png"),url("imagenes/Frame_5.png");
-    background-position: top center, center;
+    background-image: url("imagenes/triangle-29649_640.png");
+    background-position: center center;
     background-repeat: no-repeat; /*para que no se repita la imagen*/
-    background-size: 336px 304px, 336px 122px;
-    flex-direction: column;
-    border: none;
+    background-size: 20%;
+    /* Add spacing between images */
+    background-origin: border-box;  /* Needed for background-clip property */
+    background-clip: padding-box;  /* Clip background images within padding */
+    padding-top: 11em;  /* Add desired spacing + image height */
     border-radius: 24px;
     color: #0A3871;
-    margin-left: 98px;
-    margin-top: 20px;
-    padding-left: 20px;
-    position: fixed;
-    text-align: center;
-    width: 400px;
-    height: 844px;
-}
-
-@media (max-width: 768px) {
-    .mensaje {
-      background-size: 150px 150px, 75px 75px; /* Adjust values for smaller screens */
-    }
-  }
-
-
-.mensaje::content{
-    background-image: url("imagenes/Muñeco.png"), url("imagenes/Frame_5.png");
-    width: 336px;
-    height: 304px;
-    top: 283px;
-    left: 1032px;
+    margin-left: 5em;
+    padding-left: 2em;
+    position: relative;
+    width: 30vw;
+    height: 30vh;
 }
 
 .mensaje:focus{
@@ -84,7 +67,7 @@ main{
 
 .botones{
     display: inline-block;
-    margin-top: 10px;
+    margin-bottom: 0em;
 }
 
 .btn-desencriptar{
@@ -93,9 +76,9 @@ main{
     border-radius: 24px;
     color: #0A3871;
     cursor: pointer;
-    height: 67px;
-    margin-left: 30PX;
-    width: 328px;
+    height: 1.5em;
+    margin-left: 1em;
+    width: 10em;
     text-align: center;
 }
 
@@ -105,8 +88,8 @@ main{
     border-radius: 24px;
     color: white;
     cursor: pointer;
-    height: 67px;
-    width: 328px;
+    height: 1.5em;
+    width: 10em;
     text-align: center;
 }
 
@@ -115,28 +98,27 @@ main{
     border-radius: 24px;
     color: #0A3871;
     cursor: pointer;
-    height: 67px;
-    margin-left: 150px;
-    margin-top: 750px;
+    height: 1.5em;
+    margin-left: 10em;
+    margin-top: 1.5em;
     position: absolute;
-    width: 336px;
+    width: 10em;
     text-align: center;
 }
 
 .informacion{
     color: #495057;
-    font-size: 18px;
+    font-size: 0.7rem;
+    margin-top: 1.5rem;
 }
 
 .footer{
     font-style: italic;
-    font-size: 20%; /* Adjust as needed */
     justify-content: center;
     align-items: center;
     position: relative;
     display: flex;
     flex-direction: column; /* This aligns elements vertically */
-    margin-bottom: 40px;
 }
 
 .primero{
@@ -145,4 +127,62 @@ main{
 
 .segundo{
     font-size: small;
+}
+
+/* Ajustes para pantallas pequeñas (máximo 768px) */
+@media (max-width: 768px) {
+    .logo {
+        width: 20vw;
+        height: 4vh;
+        /* Ajustar width y height según sea necesario */
+    }
+
+    main {
+        margin-left: 2em; /* Ejemplo usando unidad relativa */
+        display: block;
+    }
+
+    .text-area {
+        width: 70vw; /* Puedes ajustar el width usando vw o em */
+        height: 23vh; /* Ejemplo usando vh */
+        margin-left: 1em;
+    }
+
+    .mensaje {
+        width: 70vw; /* Ejemplo ajustando el width */
+        height: 0.1vh; /* Ejemplo ajustando el height */
+        background-size: 5em; /* Ajustar tamaños de imágenes */
+        padding-top: 10em;
+        padding-left: 0.5em;
+        margin-left: 1em;
+    }
+
+    .btn-desencriptar,
+    .btn-encriptar{
+        width: 7rem; /* Ejemplo usando calc() */
+        height: 2rem;
+        /*margin-top: 0.5em;
+        margin-left: 1em; /* Ajustar márgenes */
+        margin: center;
+        font-size: 0.7em;
+    }
+
+    .copiar{
+        width: 7rem; /* Ejemplo usando calc() */
+        height: 2rem;
+        margin-top: 0.5em;
+        margin-left: 1em; /* Ajustar márgenes */
+        font-size: 0.7em; 
+    }
+}
+
+/* Otros estilos */
+.informacion {
+    font-size: 0.7rem; /* Ejemplo usando rem */
+}
+
+.footer {
+    font-size: 14px; /* Ejemplo ajustando el font-size */
+    margin-bottom: 0.5em;
+    margin-top: 5em;
 }
